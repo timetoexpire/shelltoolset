@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# $CheckFor_WSL is not NULL then using Microsoft Windows WSL2
 CheckFor_WSL=$(grep "microsoft-standard-WSL" /proc/version)
 
 echo "cat /proc/version [$(cat /proc/version)]"
