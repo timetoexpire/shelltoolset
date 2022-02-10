@@ -132,7 +132,9 @@ Get_random_number () {
 
 Escape_code () {
   echo_nextline
+  escape_code="$1"
   if [[ -z "$1" ]]; then
+    escape_code="-1"
     exit 
   else 
     exit $1
@@ -204,7 +206,7 @@ Update_time_status () {
 Check_install_command curl
 Check_install_command jq
 
-echo "Cloudflare-ddns-updater - Telegram BotFather [API] support tool"
+echo "Telegram BotFather [API] support tool"
 tg_token=$1
 if [ -z $tg_token ]; then
   echo "You need supply you Telegram token that BotFather has supplied ie"
@@ -225,7 +227,7 @@ echo " "
 Tg_getUpdates
 Jq_length
 
-while :
+while [ -z "$escape_code" ]
 do
   Api_main
 done
