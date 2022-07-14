@@ -3,11 +3,11 @@
 
 ## Copyright timetoexpire.co.uk 2022 (MIT License) https://github.com/timetoexpire/shelltoolset
 
-chartimeout=0.2
+char_timeout=0.2
 timeout_amount=10
 
 function input_keypressed (){
-  read -n1 -s -t$chartimeout input_result
+  read -n1 -s -t$char_timeout input_result
 }
 
 function input_notice (){
