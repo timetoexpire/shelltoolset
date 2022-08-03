@@ -1,0 +1,19 @@
+#!/bin/bash
+
+## Copyright timetoexpire.co.uk 2022 (MIT License) https://github.com/timetoexpire/shelltoolset
+
+function Check_isSuperuser() {
+  if [ $(id -u) -eq 0 ] || [ $EUID -eq 0 ]; then
+    isSuperuser=true
+  else
+    isSuperuser=false
+  fi
+}
+
+Check_isSuperuser
+
+if [ $isSuperuser = true ]; then
+  echo "You have Root user privileges"
+else
+  echo "You normal un-privileged user"
+fi
