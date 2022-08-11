@@ -5,7 +5,7 @@
 function Get_CurrentUser()
 {
 ; Output $_USER
-  local _TEMPUSER=("$USER" "$USERNAME" "$(id -u -n)" "$(whoami)" "$USERNAME")
+  local _TEMPUSER=("$USER" "$USERNAME" "$(id -u -n)" "$(whoami)")
 
   for _TEMPI in ${!_TEMPUSER[@]};
   do
