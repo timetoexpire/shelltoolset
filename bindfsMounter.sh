@@ -73,6 +73,10 @@ if [ $? -eq 1 ]; then
     sudo rm -R -v "$bindFullPath"
   fi
   mkdir -p "$bindFullPath"
+  if [ ! -d "$bindFullPath" ]; then
+    echo "Not able to create folder [$bindFullPath]"
+    exit 1
+  fi
   sudo bindfs --map=root/${USER}:@root/@$(id -gn) "$bindMap" "$bindFullPath"
   echo -n "bindfs set up as "
 else
