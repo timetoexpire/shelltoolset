@@ -52,6 +52,11 @@ if [[ "$bindMap" == */ ]]; then
 #  echo "Fixed [$bindMap]"
 fi
 
+if [ ! -d "$bindMap" ]; then
+  echo "BindMap dosn't exists [$bindMap]"
+  exit 1
+fi
+
 bindFullPath="$bindPath""/""$bindName"
 
 #echo "BindMap = $bindMap"
